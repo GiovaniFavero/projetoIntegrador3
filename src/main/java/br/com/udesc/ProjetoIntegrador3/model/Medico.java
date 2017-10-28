@@ -1,14 +1,22 @@
 package br.com.udesc.ProjetoIntegrador3.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="medicos")
+@SequenceGenerator(name="seq", initialValue=1, allocationSize=1)
 public class Medico{
 	
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -22,7 +30,15 @@ public class Medico{
 	@NotNull(message = "Especialidade é obrigatório.")
 	private String especialidade;
 	
+	@OneToMany(mappedBy = "medico")
+	private List<Exame> exames;
 	
+	public List<Exame> getExames() {
+		return exames;
+	}
+	public void setExames(List<Exame> exames) {
+		this.exames = exames;
+	}
 	public long getId() {
 		return id;
 	}
