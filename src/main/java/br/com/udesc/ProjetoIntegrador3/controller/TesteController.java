@@ -10,5 +10,4 @@ public class TesteController {
 	public String teste() {
 		return "teste";
 	}
-
 }
