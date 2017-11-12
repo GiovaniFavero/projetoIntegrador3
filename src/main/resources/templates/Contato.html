@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="LayoutPadraoSite">
+<head>
+<title>Atendimento por e-mail | Secretária de Saúde de Ibirama</title>
+</head>
+<section layout:fragment="conteudo">
+
+        	<div class="center_content_pages">
+
+                    <div class="financial-application-form">
+                        <h2>Fale Conosco</h2>
+
+                        <p>
+                            A secretária municipal se preocupa com o bem estar de seus cidadãos e estamos aqui para ajudar no que for preciso, esse é o nosso canal de comunicação
+                            caso tenha uma dúvida, crítica ou sugestão preencha os campos que iremos entrar em contato o mais rápido possivel.
+                        </p>
+
+                        <div class="form">
+                            <div class="form_row">
+                                <label>Nome:</label>
+                                <input type="text" name="" class="main_input" />
+                            </div>
+
+                            <div class="form_row">
+                                <label>E-mail:</label>
+                                <input type="text" name="" class="main_input" />
+                            </div> 
+
+                            <div class="form_row">
+                                <label>Telefone:</label>
+                                <input id="telefone" type="text" name="" class="main_input" />
+                            </div> 
+                            <script>
+                                jQuery(function ($) {
+                                    $("#telefone").mask("(99) 9 9999-9999");
+                                    $("#cod").mask("999.999.999-99");
+
+                                });
+                            </script>
+
+                            <div class="form_row">
+                                <label>Assunto:</label>
+                                <input type="text" name="" class="main_input" />
+                            </div>  
+
+                            <div class="form_row">
+                                <label>Mensagem:</label>
+                                <textarea class="main_textarea"></textarea>
+                            </div> 
+
+
+                            <div class="form_row">
+                                <input type="submit" name="" class="submit" value="Enviar Mensagem" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="testimonials">
+                        <h2>F.A.Q</h2>
+
+                        <div class="testbox">
+                            <h4>Qual o tempo médio de atendimento nas unidades de Saúde? </h4>
+                            <p>
+                                R: Depende da localização
+                            </p>
+                        </div>
+
+                        <div class="testbox">
+                            <h4>Como eu marco uma consulta?</h4>
+                            <p>
+                                R: Leve seu RG, sua carteira do SUS e o cartão de saúde municipal e se dirija à unidade de saúde mais próxima
+                            </p>
+                        </div>             
+                        <div class="testbox">
+                            <h4>Os exames são gratuitos?</h4>
+                            <p>
+                                R: A maioria dos exames laboratóriais são cobertos pelo SUS, salvo alguns exames específicos.
+                            </p>
+                        </div>
+                        <div class="testbox">
+                            <h4>Onde ficam as unidades de saúde?</h4>
+                            <p>
+                                R: Confira em nossa pagina <a th:href="@{/postos/}">Atendimento</a>
+                            </p>
+                        </div> 
+
+                    </div>
+
+
+
+
+
+                    <div class="clear"></div>
+                </div>
+</section>
+</html>

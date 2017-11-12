@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Secretaria de Saúde de Ibirama</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" media="screen" />
+    <script type="text/javascript" th:src="@{/js/jquery.core.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.superfish.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.jcarousel.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.easing.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.scripts.js}"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="top_corner"></div>
+	    <div id="main_container">
+	        <div id="header">
+	            <div id="logo"><a th:href="@{/}"><img th:src="@{/images/logo.jpg}" height="80" width="200" alt="" title="" border="0" /></a></div>
+	            <div id="menu">
+	                <ul>                                                                                            
+	                    <li><a class="current" th:href="@{/}" title="">Inicio</a></li>
+	                    <li><a th:href="@{/cidade/}" title="">Cidade</a></li>
+	                    <li><a th:href="@{/postos/}" title="">Atendimento</a></li>
+	                    <li><a th:href="@{/exames/}" title="">Consultar Exames</a></li>
+	                    <li><a th:href="@{/contato/}" title="">Contato</a></li>
+	                </ul>
+	            </div>
+	     	</div>
+	
+			<section layout:fragment="conteudo">
+				<p>Conteudo Principal</p>
+			</section>
+	        <div class="footer">
+	
+	            <div class="footer_links">
+	                <a class="current" th:href="@{/}" title="">Inicio</a>
+	                <a th:href="@{/cidade/}" title="">Cidade</a>
+	                <a th:href="@{/postos/}" title="">Atendimento</a>
+	                <a th:href="@{/exames/}" title="">Consultar Exames</a>
+	                <a th:href="@{/contato/}" title="">Contato</a>
+				</div>
+	        </div>
+		</div>
+	</div>
+</body>
+</html>

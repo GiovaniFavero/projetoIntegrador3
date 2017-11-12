@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="LayoutPadraoSite">
+<head>
+<title>Consulta Exames | Secretária de Saúde de Ibirama</title>
+</head>
+<section layout:fragment="conteudo">
+
+        	<div class="center_content_pages">
+
+                    <div class="financial-application-form">
+                        <h2>Consultar Exames</h2>
+
+                        <p>
+                           A secretária municipal se preocupa com o bem estar de seus cidadãos e estamos aqui para ajudar no que for preciso, esse é o nosso canal de comunicação caso tenha uma dúvida, crítica ou sugestão preencha os campos que iremos entrar em contato o mais rápido possivel. 
+
+                        </p>
+
+                        <div class="form">
+                            <div class="form_row">
+                                <label>CPF:</label>
+                                <input id="cod" type="text" name="cpf" class=""/>
+                            </div>
+
+                            <div class="form_row">
+                                <label>Data de Nascimento:</label>
+                                <input id="esse" type="text" name="data" class="dataaniversario" />
+                            </div> 
+
+                            <script>
+                                jQuery(function ($) {
+                                    $("#esse").mask("99/99/9999");
+                                    $("#cod").mask("999.999.999-99");
+
+                                });
+                                
+                                
+                            </script>
+
+                            <div class="left_block">
+                                <input type="submit" class="cpf" value="Consultar" onclick="window.open('/resultado-consulta/', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=900, HEIGHT=400');"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="testimonials">
+                        <h2>Lembretes para sua consulta</h2>
+                        <p>
+                            
+                            • Chegue cedo ao local de sua consulta ou exame. <br />
+                             • Leve consigo seu RG, seu cartão agendamento.<br />
+                             • Leve sua requisição de exame caso aja.<br />
+                             • Leve seu comprovante de agendamento com especialista.<br />
+                             • Crianças menores de 12 deverão aparecer acompanhadas.<br />
+                             • Caso seu exame ou consulta seja em outra cidade entre em <a href ="contato.html"> contato</a>.<br />
+                             
+                        </p>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="clear"></div>
+                </div>
+</section>
+</html>
