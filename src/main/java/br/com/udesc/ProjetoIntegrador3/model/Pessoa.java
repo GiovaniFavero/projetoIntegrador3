@@ -41,6 +41,12 @@ public class Pessoa {
 	@OneToMany(mappedBy = "paciente")
 	private List<Exame> exames;
 	
+	public List<Exame> getExames() {
+		return exames;
+	}
+	public void setExames(List<Exame> exames) {
+		this.exames = exames;
+	}
 	public long getId() {
 		return id;
 	}

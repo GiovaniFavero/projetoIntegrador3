@@ -1,34 +1,51 @@
 package br.com.udesc.ProjetoIntegrador3.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import br.com.udesc.ProjetoIntegrador3.service.ConsultaExamesService;
 
 @Controller
 public class SiteController {
 	
+	@Autowired
+	private ConsultaExamesService examesService;
+	
 	@RequestMapping("/")
-	public String index() {
-		return "Index";
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView("Index");
+		mv.addObject("botaoMenu","index");
+		return mv;
 	}
 	
 	@RequestMapping("/cidade")
-	public String cidade() {
-		return "Cidade";
+	public ModelAndView cidade() {
+		ModelAndView mv = new ModelAndView("Cidade");
+		mv.addObject("botaoMenu","cidade");
+		return mv;
 	}
 	
 	@RequestMapping("/postos")
-	public String postos() {
-		return "Postos";
+	public ModelAndView postos() {
+		ModelAndView mv = new ModelAndView("Postos");
+		mv.addObject("botaoMenu","postos");
+		return mv;
 	}
 	
 	@RequestMapping("/exames")
-	public String exames() {
-		return "Exames";
+	public ModelAndView exames() {
+		ModelAndView mv = new ModelAndView("Exames");
+		mv.addObject("botaoMenu","exames");
+		return mv;
 	}
 	
 	@RequestMapping("/contato")
-	public String contato() {
-		return "Contato";
+	public ModelAndView contato() {
+		ModelAndView mv = new ModelAndView("Contato");
+		mv.addObject("botaoMenu","contato");
+		return mv;
 	}
 	
 	@RequestMapping("/resultado-consulta")

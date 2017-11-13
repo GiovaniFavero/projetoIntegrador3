@@ -42,12 +42,10 @@ public class Exame {
 	
 	@ManyToOne
 	@JoinColumn(name="id_local")
-	@NotNull
 	private Local local;
 	
 	@ManyToOne
 	@JoinColumn(name="id_medico")
-	@NotNull
 	private Medico medico;
 	
 	public long getId() {
@@ -85,6 +83,11 @@ public class Exame {
 	}
 	public void setMedico(Medico medico) {
 		this.medico = medico;
+	}
+	@Override
+	public String toString() {
+		return "Exame [id=" + id + ", paciente=" + paciente + ", data=" + data + ", feito=" + feito + ", local=" + local
+				+ ", medico=" + medico + "]";
 	}
 	
 	
