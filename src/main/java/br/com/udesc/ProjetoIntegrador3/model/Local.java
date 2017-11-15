@@ -28,6 +28,13 @@ public class Local {
 	
 	private String cidade;
 	
+	public Local(String local) {
+		this.nome = local;
+	}
+	
+	public Local() {
+		
+	}
 	
 	public long getId() {
 		return id;

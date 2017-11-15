@@ -48,6 +48,17 @@ public class Exame {
 	@JoinColumn(name="id_medico")
 	private Medico medico;
 	
+	public Exame() {
+		
+	}
+	
+	public Exame(Pessoa paciente, Date data, Local local, Medico medico) {
+		super();
+		this.paciente = paciente;
+		this.data = data;
+		this.local = local;
+		this.medico = medico;
+	}
 	public long getId() {
 		return id;
 	}

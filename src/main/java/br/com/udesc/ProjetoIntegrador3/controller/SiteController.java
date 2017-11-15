@@ -1,10 +1,20 @@
 package br.com.udesc.ProjetoIntegrador3.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
+import br.com.udesc.ProjetoIntegrador3.DAO.PessoaFilter;
+import br.com.udesc.ProjetoIntegrador3.model.Exame;
 import br.com.udesc.ProjetoIntegrador3.service.ConsultaExamesService;
 
 @Controller
@@ -14,7 +24,12 @@ public class SiteController {
 	private ConsultaExamesService examesService;
 	
 	@RequestMapping("/")
-	public ModelAndView index() {
+	public ModelAndView index()  {
+		try {
+			examesService.alimentaBanco();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		ModelAndView mv = new ModelAndView("Index");
 		mv.addObject("botaoMenu","index");
 		return mv;
@@ -38,6 +53,7 @@ public class SiteController {
 	public ModelAndView exames() {
 		ModelAndView mv = new ModelAndView("Exames");
 		mv.addObject("botaoMenu","exames");
+		mv.addObject("filtro", new PessoaFilter());
 		return mv;
 	}
 	
@@ -48,9 +64,13 @@ public class SiteController {
 		return mv;
 	}
 	
-	@RequestMapping("/resultado-consulta")
-	public String resultadoConsulta() {
-		return "ResultadoConsulta";
+	@RequestMapping("/consultar")
+	public ModelAndView pesquisar(@ModelAttribute("filtro") PessoaFilter filtro) throws ParseException {
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = df.parse(filtro.getDataNascimento());
+		List<Exame> exames = examesService.consultaExamesPessoa(filtro.getCpf(), data); 
+		ModelAndView mv = new ModelAndView("ResultadoConsulta");
+		mv.addObject("exames", exames);
+		return mv;
 	}
-	
 }

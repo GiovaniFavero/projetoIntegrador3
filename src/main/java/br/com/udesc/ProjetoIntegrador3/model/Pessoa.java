@@ -25,7 +25,6 @@ public class Pessoa {
 	@NotNull(message = "Nome é obrigatório.")
 	private String nome;
 	
-	@CPF
 	@NotNull(message = "CPF é obrigatório.")
 	private String cpf;
 	
@@ -41,6 +40,16 @@ public class Pessoa {
 	@OneToMany(mappedBy = "paciente")
 	private List<Exame> exames;
 	
+	public Pessoa() {
+		
+	}
+	
+	public Pessoa(String nome, String cpf, Date dataNascimento) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dataNascimento = dataNascimento;
+	}
 	public List<Exame> getExames() {
 		return exames;
 	}

@@ -39,6 +39,17 @@ public class Medico{
 	public void setExames(List<Exame> exames) {
 		this.exames = exames;
 	}
+	
+	public Medico() {
+		
+	}
+	
+	public Medico(String crm, String nome, String especialidade) {
+		super();
+		this.crm = crm;
+		this.nome = nome;
+		this.especialidade = especialidade;
+	}
 	public long getId() {
 		return id;
 	}

@@ -17,33 +17,24 @@
                            A secretária municipal se preocupa com o bem estar de seus cidadãos e estamos aqui para ajudar no que for preciso, esse é o nosso canal de comunicação caso tenha uma dúvida, crítica ou sugestão preencha os campos que iremos entrar em contato o mais rápido possivel. 
 
                         </p>
-
+						<form method="GET" th:action="@{/consultar}" th:object="${filtro}">
                         <div class="form">
                             <div class="form_row">
                                 <label>CPF:</label>
-                                <input id="cod" type="text" name="cpf" class=""/>
+                                <input id="cpf" type="text" name="cpf" class="" th:field="*{cpf}" />
                             </div>
 
                             <div class="form_row">
                                 <label>Data de Nascimento:</label>
-                                <input id="esse" type="text" name="data" class="dataaniversario" />
+                                <input id="data-nascimento" th:type="text" name="data" class="dataaniversario" th:field="*{dataNascimento}"/>
                             </div> 
 
-                            <script>
-                                jQuery(function ($) {
-                                    $("#esse").mask("99/99/9999");
-                                    $("#cod").mask("999.999.999-99");
-
-                                });
-                                
-                                
-                            </script>
-
                             <div class="left_block">
-                                <input type="submit" class="cpf" value="Consultar" onclick="window.open('/resultado-consulta/', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=900, HEIGHT=400');"/>
+                                <input type="submit" class="cpf" value="Consultar" />
                             </div>
-
+						
                         </div>
+                        </form>
                     </div>
 
                     <div class="testimonials">

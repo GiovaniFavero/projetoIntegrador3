@@ -25,7 +25,17 @@
                     </tr>
                 </thead>
                 <tbody>
-
+					<tr th:each="exame : ${exames}">
+						<td th:text="${exame.paciente.nome}"></td>
+						<td th:text="${exame.paciente.cpf}"></td>
+					    <td th:text="${exame.local.nome}"></td>
+						<td th:text="${{exame.data}}"></td>
+						<td th:text="${exame.medico.nome}"></td>
+						<td th:text="${exame.medico.especialidade}"></td>
+					</tr>
+					<tr>
+						<td colspan="6" th:if="${#lists.isEmpty(exames)}">Nenhum exame foi encontrado</td>
+					</tr>
                 </tbody>
             </table>
         </div> 
