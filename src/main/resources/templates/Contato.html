@@ -5,6 +5,8 @@
 	  layout:decorator="LayoutPadraoSite">
 <head>
 <title>Atendimento por e-mail | Secretária de Saúde de Ibirama</title>
+<script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.mask.min.js}"></script>
 </head>
 <section layout:fragment="conteudo">
 
@@ -17,38 +19,31 @@
                             A secretária municipal se preocupa com o bem estar de seus cidadãos e estamos aqui para ajudar no que for preciso, esse é o nosso canal de comunicação
                             caso tenha uma dúvida, crítica ou sugestão preencha os campos que iremos entrar em contato o mais rápido possivel.
                         </p>
-
+						<form method="POST" th:action="@{/contato/enviarMensagem}" th:object="${msg}">
                         <div class="form">
                             <div class="form_row">
                                 <label>Nome:</label>
-                                <input type="text" name="" class="main_input" />
+                                <input type="text" name="" class="main_input" th:field="*{nome}" />
                             </div>
 
                             <div class="form_row">
                                 <label>E-mail:</label>
-                                <input type="text" name="" class="main_input" />
+                                <input type="text" name="" class="main_input"  th:field="*{email}"/>
                             </div> 
 
                             <div class="form_row">
                                 <label>Telefone:</label>
-                                <input id="telefone" type="text" name="" class="main_input" />
+                                <input id="telefone" type="text" name="" class="main_input" th:field="*{telefone}" />
                             </div> 
-                            <script>
-                                jQuery(function ($) {
-                                    $("#telefone").mask("(99) 9 9999-9999");
-                                    $("#cod").mask("999.999.999-99");
-
-                                });
-                            </script>
 
                             <div class="form_row">
                                 <label>Assunto:</label>
-                                <input type="text" name="" class="main_input" />
+                                <input type="text" name="" class="main_input"  th:field="*{assunto}"/>
                             </div>  
 
                             <div class="form_row">
                                 <label>Mensagem:</label>
-                                <textarea class="main_textarea"></textarea>
+                                <textarea class="main_textarea" th:field="*{mensagem}"></textarea>
                             </div> 
 
 
@@ -57,6 +52,7 @@
                             </div>
 
                         </div>
+                        </form>
                     </div>
 
                     <div class="testimonials">

@@ -42,10 +42,10 @@ public class ConsultaExamesService {
 	
 	public void alimentaBanco() throws ParseException {
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-		Pessoa p1 = new Pessoa("Giovani Fávero", "09030442930" , df.parse("09/12/1997"));
-		Pessoa p2 = new Pessoa("Antonio da Silva", "09365874122" , df.parse("02/07/1995"));
-		Pessoa p3 = new Pessoa("Carlos Santos", "12435896588" , df.parse("07/02/1992"));
-		Pessoa p4 = new Pessoa("Cesar Augusto", "12345695465" , df.parse("08/11/1998"));
+		Pessoa p1 = new Pessoa("Giovani Fávero", "090.304.429-30" , df.parse("09/12/1997"));
+		Pessoa p2 = new Pessoa("Antonio da Silva", "093.658.741-22" , df.parse("02/07/1995"));
+		Pessoa p3 = new Pessoa("Carlos Santos", "124.358.965-88" , df.parse("07/02/1992"));
+		Pessoa p4 = new Pessoa("Cesar Augusto", "123.456.954-65" , df.parse("08/11/1998"));
 		pessoaRepository.save(p1);
 		pessoaRepository.save(p2);
 		pessoaRepository.save(p3);

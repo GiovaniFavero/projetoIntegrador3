@@ -5,6 +5,8 @@
 	  layout:decorator="LayoutPadraoSite">
 <head>
 <title>Consulta Exames | Secretária de Saúde de Ibirama</title>
+<script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.mask.min.js}"></script>
 </head>
 <section layout:fragment="conteudo">
 
@@ -28,7 +30,8 @@
                                 <label>Data de Nascimento:</label>
                                 <input id="data-nascimento" th:type="text" name="data" class="dataaniversario" th:field="*{dataNascimento}"/>
                             </div> 
-
+						
+                            
                             <div class="left_block">
                                 <input type="submit" class="cpf" value="Consultar" />
                             </div>
@@ -53,12 +56,8 @@
 
 
                     </div>
-
-
-
-
-
-                    <div class="clear"></div>
+				<div class="clear"></div>
                 </div>
 </section>
+ 
 </html>
