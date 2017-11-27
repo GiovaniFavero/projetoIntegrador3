@@ -74,11 +74,11 @@ public class SiteController {
 	}
 	
 	@RequestMapping(value = "/contato/enviarMensagem", method = RequestMethod.POST)
-	public String salvarMensagem(Mensagem mensagem, RedirectAttributes attributes) {
+	public String salvarMensagem(Mensagem msg, RedirectAttributes attributes) {
 		attributes.addFlashAttribute("botaoMenu","contato");
 		attributes.addFlashAttribute("msg", new Mensagem());
 		try {
-			mensagemService.salvarMensagem(mensagem);
+			mensagemService.salvarMensagem(msg);
 		}catch(Exception e) {
 		}
 		return "redirect:/contato";

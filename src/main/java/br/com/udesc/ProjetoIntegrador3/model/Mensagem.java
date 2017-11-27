@@ -25,7 +25,7 @@ public class Mensagem {
 	
 	private String assunto;
 	
-	private String mensagem;
+	private String texto;
 
 	public long getId() {
 		return id;
@@ -67,18 +67,18 @@ public class Mensagem {
 		this.assunto = assunto;
 	}
 
-	public String getMensagem() {
-		return mensagem;
+	public String getTexto() {
+		return texto;
 	}
 
-	public void setMensagem(String mensagem) {
-		this.mensagem = mensagem;
+	public void setTexto(String texto) {
+		this.texto = texto;
 	}
 
 	@Override
 	public String toString() {
 		return "Mensagem [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + ", assunto="
-				+ assunto + ", mensagem=" + mensagem + "]";
+				+ assunto + ", mensagem=" + texto + "]";
 	}
 	
 	
